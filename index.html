@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora Puente Reque</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora del Puente Reque</h1>
+
+    <form id="calc-form">
+      <label for="variable">Selecciona la variable a calcular:</label>
+      <select id="variable">
+        <option value="Y">Desplazamiento Máximo (Ŷ)</option>
+        <option value="longitud">Longitud del puente</option>
+        <option value="masa">Masa por metro</option>
+        <option value="mantenimiento">Nivel de mantenimiento</option>
+      </select>
+
+      <div class="input-group">
+        <label>Longitud (m)
+          <span class="desc">Longitud total del puente.</span>
+          <input type="number" id="longitud" step="any"/>
+        </label>
+
+        <label>Masa por metro (kg/m)
+          <span class="desc">Masa lineal del puente.</span>
+          <input type="number" id="masa" step="any"/>
+        </label>
+
+        <label>Mantenimiento (%)
+          <span class="desc">Nivel de mantenimiento del puente.</span>
+          <input type="number" id="mantenimiento" step="any"/>
+        </label>
+
+        <label>Desplazamiento Máximo (mm)
+          <span class="desc">Resultado de la ecuación (variable dependiente).</span>
+          <input type="number" id="Y" step="any"/>
+        </label>
+      </div>
+
+      <button type="submit">Calcular</button>
+    </form>
+
+    <div id="resultado"></div>
+    <div id="interpretacion"></div>
+
+    <canvas id="grafico" height="100"></canvas>
+
+    <button id="descargar">Descargar historial</button>
+
+    <table id="historial">
+      <thead>
+        <tr>
+          <th>Longitud</th>
+          <th>Masa</th>
+          <th>Mantenimiento</th>
+          <th>Desplazamiento</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
